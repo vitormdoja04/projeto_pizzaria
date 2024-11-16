@@ -13,7 +13,7 @@
 
 #title_card {
     height: 5.5em;
-    width: 10.5em;
+    width: 5.5em;
     margin-left: 20px;
 }
 
@@ -109,7 +109,7 @@ footer a:hover {
     width: 60%;
 }
 
-#email, #number {
+#email, #number, #cnpj, #address {
     margin: 0;
     font-size: 35px;
     color: white;
@@ -149,3 +149,4 @@ footer a:hover {
         text-align: center; /* Centraliza o texto do footer */
     }
 }
+

@@ -121,10 +121,6 @@ legend {
     justify-content: space-evenly;
 }
 
-#login_button {
-    color: blue;
-}
-
 @media (max-width: 768px) {
     footer iframe {
         width: 100%; /* Torna o iframe responsivo */
@@ -135,4 +131,3 @@ legend {
     }
     
 }
-

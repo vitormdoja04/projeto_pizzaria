@@ -27,13 +27,28 @@
     <div class="container">
         <main>
             <section>
-                <h2>Login de clientes</h2>
+                <h2>Cadastro de Clientes</h2>
                 <fieldset><br>
                     <form id="contact_form" method="post" action="">
 
                         <div class="input">
+                            <label for="input_nome" id="negrito">Nome:</label><br>
+                            <input type="text" name="input_nome" id="input_nome" maxlength="100"><br><br>
+                        </div>
+                        
+                        <div class="input">
+                            <label for="input_cpf" id="negrito">CPF:</label><br>
+                            <input type="number" name="input_cpf" id="input_cpf" maxlength="11"><br><br>
+                        </div> 
+
+                        <div class="input">
                             <label for="input_email" id="negrito">E-mail:</label><br>
                             <input type="text" name="input_email" id="input_email" maxlength="50"><br><br>
+                        </div>
+
+                        <div class="input">
+                            <label for="input_fone" id="negrito">Telefone:</label><br>
+                            <input type="tel" name="input_fone" id="input_fone" maxlength="12"><br><br>
                         </div>
 
                         <div class="input">
@@ -45,15 +60,6 @@
                             <div class="div_buttons">
                                 <input type="submit" value="Enviar">
                                 <input type="reset" value="Cancelar"><br>
-                            </div>
-                        </center>
-                        
-                        <center>
-                            <br>
-                            <div class="div_buttons">
-                            <a>Não tem uma conta?</a><br>
-                            <a href="cadastro.php" class="button" id="login_button">Cadastre-se agora!</a>
-                            <br>
                             </div>
                         </center>
                     </form>

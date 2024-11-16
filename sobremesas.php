@@ -12,25 +12,28 @@
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <header>
-        <a href="index.php"><img src="" alt="Freders Pizza" id="title_card"></a>
+        <a href="index.php"><img src="images\feddy.png" alt="Freders Pizza" id="title_card"></a>
         <nav>
             <ul>
-                <li><a href="produtos.php">CARDÁPIO</a></li>
-                <li><a href="login.php">CADASTRE-SE</a></li>
+                <li><a href="pizzas.php">PIZZAS</a></li>
+                <li><a href="bebidas.php">BEBIDAS</a></li>
+                <li><a href="sobremesas.php">SOBREMESAS</a></li>
+                <li><a href="login.php">LOGIN</a></li>
                 <li><a href="carrinho.php">CARRINHO</a></li>
             </ul>
         </nav>
     </header>
     <br><br>
     <main>
-        <h2>Pizzas</h2>
+
+        <h2>Sobremesas</h2>
         <div class="primeira_linha">
         <div class="card" style="width: 35%; height: 70%;">
         <img src="images/havaiana.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Morbizza</h5>
+            <h5 class="card-title">Sobremesa1</h5>
             <br>
-            <p class="card-text">Morbius</p>
+            <p class="card-text">Desc1</p>
             <a href="produtos.php" class="btn btn-primary">Adicionar ao carrinho</a>
         </div>
         </div>
@@ -38,9 +41,9 @@
         <div class="card" style="width: 35%; height: 70%;">
         <img src="images/havaiana.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Morbizza</h5>
+            <h5 class="card-title">Sobremesa2</h5>
             <br>
-            <p class="card-text">Morbius</p>
+            <p class="card-text">Desc2</p>
             <a href="produtos.php" class="btn btn-primary">Adicionar ao carrinho</a>
         </div>
         </div>
@@ -48,16 +51,14 @@
         <div class="card" style="width: 35%; height: 70%;">
         <img src="images/havaiana.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Morbizza</h5>
+            <h5 class="card-title">Sobremesa3</h5>
             <br>
-            <p class="card-text">Morbius</p>
+            <p class="card-text">Desc3</p>
             <a href="produtos.php" class="btn btn-primary">Adicionar ao carrinho</a>
         </div>
         </div>
         </div>
 
-
-        <h2>Bebidas</h2>
         <div class="segunda_linha">
         <div class="card" style="width: 35%; height: 70%;">
         <img src="images/havaiana.jpg" class="card-img-top" alt="...">
@@ -94,9 +95,13 @@
     <footer>
         <section id="footer">
             <div class="contact-info">
-                <h2 id="h2-footer">Contact Info</h2><br>
-                <p id="email">Email: <a href="mailto:freders.pizza@hotmail.com">freders.pizza@hotmail.com</a></p><br>
-                <p id="number">Number: <a href="tel:+5055034455">+(505) 503-4455</a></p>
+                <center>
+                <h2 id="h2-footer">Informações de contato</h2>
+                <p id="email">E-mail: <a href="mailto:freders.pizza@hotmail.com">freders.pizza@hotmail.com</a></p>
+                <p id="number">Telefone: <a href="tel:+5055034455">+(505) 503-4455</a></p>
+                <p id="cnpj">CNPJ: 87.123.456/789-89</p>
+                <p id="address">Endereço: Praça Samuel Sabatini, 50 - São Bernardo do Campo - SP</p>
+                </center>
             </div>
         </section>
     </footer>
