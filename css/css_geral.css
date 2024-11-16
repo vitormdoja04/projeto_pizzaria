@@ -1,0 +1,151 @@
+@media (max-width: 768px) {
+    #name {
+        font-size: 50px; /* Ajusta o tamanho da fonte */
+    }
+    p, blockquote, main li, main h2, main h3 {
+        font-size: 18px; /* Diminui o tamanho da fonte em telas menores */
+    }
+    img {
+        width: 100%; /* Torna a imagem responsiva */
+        height: auto; /* Mantém a proporção da imagem */
+    }
+}
+
+#title_card {
+    height: 5.5em;
+    width: 10.5em;
+    margin-left: 20px;
+}
+
+header {
+    background-color: #1d3557;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+#search_div{
+    display: flexbox;
+    flex-direction: column;
+    width: 40%;
+}
+
+#search_form{
+    display: flexbox;
+    flex-direction: column;
+}
+
+#titulo {
+    font-size: 50px;
+    padding-left: 50px;
+}
+
+nav {
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    justify-items: right;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
+}
+
+header nav a:hover{
+    color: #e63946;
+}
+
+a {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+main{
+    justify-content: center;
+}
+
+a:hover {
+    color: rgb(8, 36, 68);
+}
+
+footer {
+    background-color: #1d3557;
+    color: white;
+    padding: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+#footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+footer a:hover {
+    color: #FFE882;
+}
+
+#h2-footer {
+    color: #FFE882;
+    width: 100%;
+    font-size: 40px;
+}
+
+.contact-info {
+    display: block; 
+    align-items:start;
+    justify-content: left;
+    width: 60%;
+}
+
+#email, #number {
+    margin: 0;
+    font-size: 35px;
+    color: white;
+    font:bold;
+}
+
+.video_div{
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    #section1, #section2 {
+        padding: 20px; /* Aumenta o padding */
+        margin: 0 auto; /* Centraliza o conteúdo */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    #title_card {
+        width: 80%; /* Mantém a largura do título */
+        height: auto; /* Mantém a proporção */
+        margin: 20px auto; /* Centraliza a imagem e adiciona margem */
+    }
+
+    #img_saul {
+        max-width: 90%; /* Limita a largura da imagem */
+        height: auto; /* Mantém a proporção */
+        margin: 20px auto; /* Centraliza a imagem */
+    }
+
+    .contact-info {
+        text-align: center; /* Centraliza o texto de contato */
+        margin: 20px 0; /* Adiciona margem acima e abaixo */
+    }
+
+    footer {
+        padding: 20px; /* Adiciona padding ao footer */
+        text-align: center; /* Centraliza o texto do footer */
+    }
+}
