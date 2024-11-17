@@ -1,3 +1,10 @@
+<?php
+include('conecta.php');
+
+$sql = "SELECT * FROM sobremesa";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,70 +32,30 @@
     </header>
     <br><br>
     <main>
-
-        <h2>Sobremesas</h2>
-        <div class="primeira_linha">
-        <div class="card" style="width: 35%; height: 70%;">
-        <img src="images/havaiana.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Sobremesa1</h5>
-            <br>
-            <p class="card-text">Desc1</p>
-            <a href="produtos.php" class="btn btn-primary">Adicionar ao carrinho</a>
-        </div>
-        </div>
-
-        <div class="card" style="width: 35%; height: 70%;">
-        <img src="images/havaiana.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Sobremesa2</h5>
-            <br>
-            <p class="card-text">Desc2</p>
-            <a href="produtos.php" class="btn btn-primary">Adicionar ao carrinho</a>
-        </div>
-        </div>
-
-        <div class="card" style="width: 35%; height: 70%;">
-        <img src="images/havaiana.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Sobremesa3</h5>
-            <br>
-            <p class="card-text">Desc3</p>
-            <a href="produtos.php" class="btn btn-primary">Adicionar ao carrinho</a>
-        </div>
-        </div>
-        </div>
-
-        <div class="segunda_linha">
-        <div class="card" style="width: 35%; height: 70%;">
-        <img src="images/havaiana.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Morbida</h5>
-            <br>
-            <p class="card-text">Morbius</p>
-            <a href="produtos.php" class="btn btn-primary">Adicionar ao carrinho</a>
-        </div>
-        </div>
-
-        <div class="card" style="width: 35%; height: 70%;">
-        <img src="images/havaiana.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Morbida</h5>
-            <br>
-            <p class="card-text">Morbius</p>
-            <a href="produtos.php" class="btn btn-primary">Adicionar ao carrinho</a>
-        </div>
-        </div>
-
-        <div class="card" style="width: 35%; height: 70%;">
-        <img src="images/havaiana.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Morbida</h5>
-            <br>
-            <p class="card-text">Morbius</p>
-            <a href="produtos.php" class="btn btn-primary">Adicionar ao carrinho</a>
-        </div>
-        </div>
+    <div class="primeira_linha">
+            <?php
+            if ($result->num_rows > 0) {
+                // Exibindo as pizzas com CSS Grid
+                echo "<div class='produto-grid'>";
+            
+                while ($row = $result->fetch_assoc()) {
+                    echo "<div class='pizza-card'>";
+                    echo "<img src='" . $row['link_imagem_sobremesa'] . "' class='card-img-top' alt='bebida'>";
+                    echo "<div class='card-body'>";
+                    echo "<h5 class='card-title'>" . $row['nome_sobremesa'] . "</h5>";
+                    echo "<h5 class='card-text'>" . $row['descricao_sobremesa'] . "</h5>";
+                    echo "<p class='card-text'>Preço: R$ " . number_format($row['valor_sobremesa'], 2, ',', '.') . "</p>";
+                    echo "<a href='produtos.php' class='btn btn-primary'>Adicionar ao carrinho</a>";
+                    echo "</div></div>";
+                }
+            
+                echo "</div>";
+            } else {
+                echo "Nenhuma pizza encontrada.";
+            }
+            
+            $conn->close();
+            ?>
         </div>
     </main>
     <br><br>

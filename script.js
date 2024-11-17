@@ -22,4 +22,6 @@ function prevImage() {
 
 // Inicializa o carrossel com a primeira imagem visível
 showImage(currentIndex);
+
+// Intervalo para alternar a imagem automaticamente a cada 5 segundos
 setInterval(nextImage, 5000);

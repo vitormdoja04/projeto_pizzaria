@@ -35,7 +35,7 @@ main h2 {
     font-size: 50px;
     text-align: center;
     text-decoration: underline;
-    color: white;
+    color: red;
 }
 
 label {
