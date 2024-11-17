@@ -56,7 +56,7 @@ if (!isset($_SESSION['id_usuario'])) {
                     echo "<h5 class='card-title'>" . $row['nome_bebida'] . "</h5>";
                     echo "<p class='card-text'>Preço: R$ " . number_format($row['valor_bebida'], 2, ',', '.') . "</p>";
                     ?>
-                    <form action="adicionar_carrinho.php" method="POST">
+                    <form action="adicionar_bebida_carrinho.php" method="POST">
                         <input type="hidden" name="id_bebida" value="<?= $row['id_bebida']; ?>">
                         <label for="quantidade">Quantidade:</label>
                         <input type="number" name="quantidade" value="1" min="1">

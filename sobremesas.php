@@ -56,7 +56,7 @@ if (!isset($_SESSION['id_usuario'])) {
                     echo "<h5 class='card-title'>" . $row['nome_sobremesa'] . "</h5>";
                     echo "<p class='card-text'>Preço: R$ " . number_format($row['valor_sobremesa'], 2, ',', '.') . "</p>";
                     ?>
-                    <form action="adicionar_carrinho.php" method="POST">
+                    <form action="adicionar_sobremesa_carrinho.php" method="POST">
                         <input type="hidden" name="id_sobremesa" value="<?= $row['id_sobremesa']; ?>">
                         <label for="quantidade">Quantidade:</label>
                         <input type="number" name="quantidade" value="1" min="1">
