@@ -14,10 +14,11 @@ main h2 {
     margin-top: 40px;
 }
 
+/* Grid de produtos - garantindo 3 colunas no desktop */
 .produto-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     margin-top: 20px;
     padding: 20px;
 }
@@ -25,17 +26,22 @@ main h2 {
 .pizza-card {
     background-color: white;
     padding: 20px;
+    height: auto;
     border-radius: 8px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Alinha o conteúdo do card */
+    gap: 10px;
 }
 
 .pizza-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    max-height: 250px;
-    object-fit: cover;
+    width: 100%;              /* Garante que a imagem ocupe toda a largura disponível */
+    height: auto;             /* Mantém a proporção da imagem */
+    border-radius: 8px;       /* Arredonda as bordas da imagem */
+    max-height: 250px;        /* Define uma altura máxima para a imagem, ajustável conforme necessário */
+    object-fit: contain;        /* Garante que a imagem cubra toda a área sem distorcer a proporção */
 }
 
 .pizza-card .card-body {
@@ -53,6 +59,7 @@ main h2 {
     color: #666;
 }
 
+/* Botão de adicionar ao carrinho */
 .pizza-card .btn {
     background-color: #e63946;
     color: white;
@@ -60,18 +67,12 @@ main h2 {
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
+    align-self: center; /* Garante que o botão fique centralizado */
 }
 
+/* Efeito de hover no botão */
 .pizza-card .btn:hover {
     background-color: #d62828;
-}
-
-.primeira_linha, .segunda_linha, .terceira_linha {
-    background-color: #1d3557;
-    display: flex;
-    gap: 10%;
-    justify-content: center;
-    margin-top: 20px;
 }
 
 footer {
@@ -87,12 +88,13 @@ footer a:hover {
     color: #FFE882;
 }
 
+/* Ajustes para telas pequenas */
 @media (max-width: 768px) {
     main h2 {
         font-size: 50px;
     }
 
-    .pizza-grid {
+    .produto-grid {
         grid-template-columns: 1fr; 
     }
 
@@ -109,42 +111,4 @@ footer a:hover {
     .pizza-card .btn {
         padding: 10px 15px;
     }
-}
-
-#footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 30px;
-}
-
-@media (max-width: 768px) {
-    #footer {
-        flex-direction: column; 
-        text-align: center;
-    }
-}
-
-button {
-    position: absolute;
-    top: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    transform: translateY(-50%);
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
 }

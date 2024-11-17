@@ -3,6 +3,13 @@ include('conecta.php');
 
 $sql = "SELECT * FROM pizza";
 $result = $conn->query($sql);
+
+session_start();
+
+if (!isset($_SESSION['id_usuario'])) {
+    header('Location: login.php');
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -11,13 +18,12 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freders Pizza</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="css/css_produtos.css">
     <link rel="stylesheet" href="css/css_geral.css">
 </head>
 <body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <header>
         <a href="index.php"><img src="images\feddy.png" alt="Freders Pizza" id="title_card"></a>
         <nav>
@@ -25,38 +31,45 @@ $result = $conn->query($sql);
                 <li><a href="pizzas.php">PIZZAS</a></li>
                 <li><a href="bebidas.php">BEBIDAS</a></li>
                 <li><a href="sobremesas.php">SOBREMESAS</a></li>
-                <li><a href="login.php">LOGIN</a></li>
                 <li><a href="carrinho.php">CARRINHO</a></li>
+                <?php if (isset($_SESSION['id_usuario'])): ?>
+                    <li><span>Olá, <?= $_SESSION['nome']; ?></span></li>
+                    <li><a href="sair.php">SAIR</a></li>
+                <?php else: ?>
+                    <li><a href="login.php">LOGIN</a></li>
+                    <li><a href="cadastro.php">CADASTRE-SE</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>
+
     <br><br>
     <main>
-        <div class="primeira_linha">
-            <?php
-            if ($result->num_rows > 0) {
-                // Exibindo as pizzas com CSS Grid
-                echo "<div class='produto-grid'>";
-            
-                while ($row = $result->fetch_assoc()) {
-                    echo "<div class='pizza-card'>";
-                    echo "<img src='" . $row['link_imagem_pizza'] . "' class='card-img-top' alt='Pizza'>";
-                    echo "<div class='card-body'>";
-                    echo "<h5 class='card-title'>" . $row['sabor_pizza'] . "</h5>";
-                    echo "<h5 class='card-title'>" . $row['tamanho_pizza'] . "</h5>";
-                    echo "<p class='card-text'>Preço: R$ " . number_format($row['preco_pizza'], 2, ',', '.') . "</p>";
-                    echo "<a href='produtos.php' class='btn btn-primary'>Adicionar ao carrinho</a>";
-                    echo "</div></div>";
-                }
-            
-                echo "</div>";
-            } else {
-                echo "Nenhuma pizza encontrada.";
+    <div class="produto-grid">
+        <?php
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<div class='pizza-card'>";
+                echo "<img src='" . $row['link_imagem_pizza'] . "' class='card-img-top' alt='Pizza'>";
+                echo "<div class='card-body'>";
+                echo "<h5 class='card-title'>" . $row['sabor_pizza'] . "</h5>";
+                echo "<h5 class='card-title'>" . $row['tamanho_pizza'] . "</h5>";
+                echo "<p class='card-text'>Preço: R$ " . number_format($row['preco_pizza'], 2, ',', '.') . "</p>";
+                ?>
+                <form action="adicionar_pizza_carrinho.php" method="POST">
+                    <input type="hidden" name="id_pizza" value="<?= $row['id_pizza']; ?>">
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="number" name="quantidade" value="1" min="1">
+                    <button type="submit" class="btn btn-primary">Adicionar ao carrinho</button>
+                </form>
+                <?php
+                echo "</div></div>";
             }
-            
-            $conn->close();
-            ?>
-        </div>
+        } else {
+            echo "Nenhuma pizza encontrada.";
+        }
+        ?>
+    </div>
     </main>
     <br><br>
     <footer>

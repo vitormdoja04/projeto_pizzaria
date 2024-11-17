@@ -25,7 +25,7 @@ CREATE TABLE usuario (
 	senha varchar(50) not null,
 	nome varchar(50) not null,
 	telefone varchar(15) not null, 
-    cpf integer not null
+    cpf varchar(11) not null
 );
 
 CREATE TABLE sobremesa (
@@ -82,3 +82,5 @@ INSERT INTO sobremesa (nome_sobremesa, descricao_sobremesa, valor_sobremesa, lin
 ('Brownie', 'Brownie de chocolate com castanhas', 14.50, 'https://www.inspiredtaste.net/wp-content/uploads/2024/01/Brownies-Recipe-Video.jpg'),
 ('Mousse de Maracujá', 'Mousse suave de maracujá', 10.00, 'https://static.itdg.com.br/images/360-240/8fed8f60d3c8e3990396e2478cbc7f2a/shutterstock-1905617575-1-.jpg'),
 ('Torta de Chocolate', 'Torta de chocolate recheada com ganache e cobertura de chantilly', 20.00, 'https://janacabral.com/wp-content/uploads/2023/07/ReceitaTorta-mousse-de-chocolate-7-e1689275489693.jpg');
+
+select * from usuario;

@@ -21,12 +21,10 @@
 
     $carousel_images = [];
     if ($result->num_rows > 0) {
-        // Armazenar os links das imagens
         while ($row = $result->fetch_assoc()) {
             $carousel_images[] = $row['link_imagem'];
         }
     }
 
-    // Fechar a conexão
     $conn->close();
 ?>

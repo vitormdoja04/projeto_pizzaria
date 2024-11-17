@@ -1,3 +1,24 @@
+<?php
+include 'conecta.php'; 
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nome = $_POST['input_nome'];
+    $cpf = $_POST['input_cpf'];
+    $email = $_POST['input_email'];
+    $telefone = $_POST['input_fone'];
+    $senha = $_POST['input_password'];
+
+    $query = "INSERT INTO usuario (nome, cpf, email, telefone, senha) VALUES ('$nome', '$cpf', '$email', '$telefone', '$senha')";
+    if (mysqli_query($conn, $query)) {
+        echo "Usuário cadastrado com sucesso!";
+        header('Location: login.php');
+        exit();
+    } else {
+        echo "Erro ao cadastrar usuário: " . mysqli_error($conn);
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,11 +36,18 @@
         <a href="index.php"><img src="images\feddy.png" alt="Freders Pizza" id="title_card"></a>
         <nav>
             <ul>
-                <li><a href="pizzas.php">PIZZAS</a></li>
-                <li><a href="bebidas.php">BEBIDAS</a></li>
-                <li><a href="sobremesas.php">SOBREMESAS</a></li>
+            <li><a href="pizzas.php">PIZZAS</a></li>
+            <li><a href="bebidas.php">BEBIDAS</a></li>
+            <li><a href="sobremesas.php">SOBREMESAS</a></li>
+            <li><a href="carrinho.php">CARRINHO</a></li>
+            
+            <?php if (isset($_SESSION['id_usuario'])): ?>
+                <li><span>Olá, <?= $_SESSION['nome']; ?></span></li>
+                <li><a href="sair.php">SAIR</a></li>
+            <?php else: ?>
                 <li><a href="login.php">LOGIN</a></li>
-                <li><a href="carrinho.php">CARRINHO</a></li>
+                <li><a href="cadastro.php">CADASTRE-SE</a></li>
+            <?php endif; ?>
             </ul>
         </nav>
     </header>
