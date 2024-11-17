@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <li><span>Olá, <?= $_SESSION['nome']; ?></span></li>
                 <li><a href="sair.php">SAIR</a></li>
             <?php else: ?>
-                <li><a href="login.php">LOGIN</a></li>
+                <li><a href="login.php" style="color: red">LOGIN</a></li>
                 <li><a href="cadastro.php">CADASTRE-SE</a></li>
             <?php endif; ?>
             </ul>

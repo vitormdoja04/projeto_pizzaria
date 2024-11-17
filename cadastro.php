@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <li><a href="sair.php">SAIR</a></li>
             <?php else: ?>
                 <li><a href="login.php">LOGIN</a></li>
-                <li><a href="cadastro.php">CADASTRE-SE</a></li>
+                <li><a href="cadastro.php" style="color: red">CADASTRE-SE</a></li>
             <?php endif; ?>
             </ul>
         </nav>

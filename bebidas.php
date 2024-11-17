@@ -30,7 +30,7 @@ if (!isset($_SESSION['id_usuario'])) {
         <nav>
             <ul>
                 <li><a href="pizzas.php">PIZZAS</a></li>
-                <li><a href="bebidas.php">BEBIDAS</a></li>
+                <li><a href="bebidas.php" style="color: red">BEBIDAS</a></li>
                 <li><a href="sobremesas.php">SOBREMESAS</a></li>
                 <li><a href="carrinho.php">CARRINHO</a></li>
                 <?php if (isset($_SESSION['id_usuario'])): ?>

@@ -28,7 +28,7 @@ if (!isset($_SESSION['id_usuario'])) {
         <a href="index.php"><img src="images\feddy.png" alt="Freders Pizza" id="title_card"></a>
         <nav>
             <ul>
-                <li><a href="pizzas.php">PIZZAS</a></li>
+                <li><a href="pizzas.php" style="color: red">PIZZAS</a></li>
                 <li><a href="bebidas.php">BEBIDAS</a></li>
                 <li><a href="sobremesas.php">SOBREMESAS</a></li>
                 <li><a href="carrinho.php">CARRINHO</a></li>

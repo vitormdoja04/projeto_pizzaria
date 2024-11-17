@@ -31,7 +31,7 @@ if (!isset($_SESSION['id_usuario'])) {
             <ul>
                 <li><a href="pizzas.php">PIZZAS</a></li>
                 <li><a href="bebidas.php">BEBIDAS</a></li>
-                <li><a href="sobremesas.php">SOBREMESAS</a></li>
+                <li><a href="sobremesas.php" style="color: red">SOBREMESAS</a></li>
                 <li><a href="carrinho.php">CARRINHO</a></li>
                 <?php if (isset($_SESSION['id_usuario'])): ?>
                     <li><span>Olá, <?= $_SESSION['nome']; ?></span></li>
